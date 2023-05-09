@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Mood Form</title>
+</head>
+<body>
+    <h1>Add Mood Form</h1>
+    <form method="post">
+        <div>
+            <label for="moodDate">Mood Date:</label>
+            <input type="date" id="moodDate" name="moodDate" th:value="${moodDate}" required>
+        </div>
+        <div>
+            <label for="mood">Mood:</label>
+            <input type="text" id="mood" name="mood" th:value="${mood}" required>
+        </div>
+        <div>
+            <label for="pills">Pills:</label>
+            <input type="text" id="pills" name="pills" th:value="${pills}" required>
+        </div>
+        <div>
+            <label for="note">Note:</label>
+            <textarea id="note" name="note" th:text="${note}"></textarea>
+        </div>
+        <button type="submit">Add Mood</button>
+    </form>
+</body>
+</html>
