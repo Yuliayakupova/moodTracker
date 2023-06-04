@@ -1,6 +1,6 @@
 package com.example.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class User {
 
@@ -18,12 +18,11 @@ public class User {
 
     private String personalCode;
 
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     private String contact;
 
-    public User(int id, String login, String password, String userEmail, String userFirstName, String userLastName, String personalCode, Date dateOfBirth, String contact) {
-        this.id = id;
+    public User(String login, String password, String userEmail, String userFirstName, String userLastName, String personalCode, LocalDate dateOfBirth, String contact) {
         this.login = login;
         this.password = password;
         this.userEmail = userEmail;
@@ -36,14 +35,6 @@ public class User {
 
     public User() {
 
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getLogin() {
@@ -94,11 +85,11 @@ public class User {
         this.personalCode = personalCode;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
