@@ -2,7 +2,7 @@ package com.example.dto;
 
 import java.util.Date;
 
-public class UserDTO {
+public class User {
 
     private int id;
 
@@ -18,15 +18,11 @@ public class UserDTO {
 
     private String personalCode;
 
-    private String userGender;
-
     private Date dateOfBirth;
 
     private String contact;
 
-    private String role;
-
-    public UserDTO(int id, String login, String password, String userEmail, String userFirstName, String userLastName, String personalCode, String userGender, Date dateOfBirth, String contact, String role) {
+    public User(int id, String login, String password, String userEmail, String userFirstName, String userLastName, String personalCode, Date dateOfBirth, String contact) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -34,10 +30,12 @@ public class UserDTO {
         this.userFirstName = userFirstName;
         this.userLastName = userLastName;
         this.personalCode = personalCode;
-        this.userGender = userGender;
         this.dateOfBirth = dateOfBirth;
         this.contact = contact;
-        this.role = role;
+    }
+
+    public User() {
+
     }
 
     public int getId() {
@@ -96,14 +94,6 @@ public class UserDTO {
         this.personalCode = personalCode;
     }
 
-    public String getUserGender() {
-        return userGender;
-    }
-
-    public void setUserGender(String userGender) {
-        this.userGender = userGender;
-    }
-
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -120,11 +110,4 @@ public class UserDTO {
         this.contact = contact;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }

@@ -1,27 +1,31 @@
 package com.example.controller;
 
-import com.example.dto.UserDTO;
+import com.example.dto.User;
 import com.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.List;
 
 @RestController
-@RequestMapping("/user")
 public class UserController {
 
-    @Autowired
     private final UserRepository userRepository;
 
+    @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/")
-    public ResponseEntity<Void> createUser(@RequestBody UserDTO userDTO) {
-        userRepository.insertUserData(userDTO);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @PostMapping("/user")
+    public ResponseEntity<Void> createUser(@RequestBody User user) {
+        userRepository.saveUserData(user);
+       return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return userRepository.getAllUsers();
     }
 }
