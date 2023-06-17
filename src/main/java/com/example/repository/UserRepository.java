@@ -47,7 +47,6 @@ public class UserRepository {
 
         try{
             connection.update(INTO_USER_DATA,
-                    //user.getId(),
                     user.getLogin(),
                     user.getPassword(),
                     user.getUserEmail(),
@@ -64,7 +63,6 @@ public class UserRepository {
     public List<User> getAllUsers() {
         return connection.query(SELECT_ALL_USERS, (resultSet, rowNum) -> {
             User user = new User();
-            //user.setId(resultSet.getInt("id"));
             user.setLogin(resultSet.getString("user_login"));
             user.setPassword(resultSet.getString("user_password"));
             user.setUserEmail(resultSet.getString("user_email"));
@@ -72,7 +70,6 @@ public class UserRepository {
             user.setUserFirstName(resultSet.getString("user_firstName"));
             user.setUserLastName(resultSet.getString("user_lastName"));
             user.setDateOfBirth(LocalDate.parse(resultSet.getString("user_dateOfBirth")));
-            //user.setDateOfBirth(resultSet.getDate("user_dateOfBirth").toLocalDate());
             user.setContact(resultSet.getString("user_contact"));
             return user;
         });

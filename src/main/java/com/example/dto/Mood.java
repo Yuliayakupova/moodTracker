@@ -6,14 +6,13 @@ public class Mood {
 
     private int id;
 
-    // Mood from 1 to 7
-    private String moodType;
+    private String moodValue;
 
     private Date moodTimestamp;
 
-    public Mood(int id, String moodType, Date moodTimestamp) {
+    public Mood(int id, String moodValue, Date moodTimestamp) {
         this.id = id;
-        this.moodType = moodType;
+        this.moodValue = moodValue;
         this.moodTimestamp = moodTimestamp;
     }
 
@@ -25,12 +24,12 @@ public class Mood {
         this.id = id;
     }
 
-    public String getMoodType() {
-        return moodType;
+    public String getMoodValue() {
+        return moodValue;
     }
 
-    public void setMoodType(String moodType) {
-        this.moodType = moodType;
+    public void setMoodValue(String moodValue) {
+        this.moodValue = moodValue;
     }
 
     public Date getMoodTimestamp() {
